@@ -1,0 +1,265 @@
+$secondOffset: 2vw;
+$firstOffset: 1vw;
+$secondOpacity: 0.1;
+$firstOpacity: 0.3;
+$secondBlur: 0px;
+$firstBlur: 0px;
+$firstColour: rgba(0, 0, 0, $firstOpacity);
+$secondColour: rgba(0, 0, 0, $secondOpacity);
+
+.chroma-shadow {
+    box-shadow: $firstOffset $firstOffset $firstBlur $firstColour, $secondOffset $secondOffset $secondBlur $secondColour;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.app {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    main {
+        width: 100%;
+    }
+
+    main .hero-image {
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to bottom, rgba(185, 215, 215, 0.52), rgba(251, 153, 142, 0.73)), url(https://source.unsplash.com/random/1920x1080/?moon);
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.navigation {
+    position: absolute;
+    bottom: 0;
+    height: 30px;
+    background: black;
+    width: 100vw;
+
+    ul {
+        display: flex;
+        justify-content: space-around;
+        list-style-type: none;
+        height: 100%;
+
+        li.nav-link {
+            color: lightgray;
+            /* text-decoration: none!important; */
+            text-transform: lowercase;
+            font-family: system-ui;
+            font-weight: 400;
+            letter-spacing: 10px;
+            width: 100%;
+            text-align: center;
+            height: 100%;
+
+            a {
+                text-decoration: none;
+                color: lightgray;
+            }
+        }
+
+
+        li.nav-link:hover {
+            background: white;
+            cursor: pointer;
+        }
+
+        li.nav-link:hover a {
+            color: black;
+        }
+    }
+
+}
+
+.inner-content {
+    text-align: left;
+    padding: 10%;
+    width: 90%;
+}
+
+h1#bigname {
+    font-family: system-ui;
+    font-size: 3.5vw;
+    text-transform: uppercase;
+    font-weight: 1000;
+    letter-spacing: 0.7vw;
+    color: black;
+    width: 54%;
+    background: white;
+    text-align: center;
+    // box-shadow: $blue-x $blue-y rgba(0, 0, 255, 0.5), 10px 10px rgba(255, 0, 0, 0.5);
+}
+
+h4.tagline {
+    text-transform: lowercase;
+    color: lightgray;
+    font-weight: 200;
+    font-family: system-ui;
+    font-size: 1.5vw;
+    letter-spacing: 0.6vw;
+    background: black;
+    width: 29%;
+    padding-left: 3px;
+    text-align: center;
+    height: 2.5vw;
+}
+
+.social-icons {
+    display: flex;
+    width: 50%;
+    justify-content: flex-start;
+
+    a {
+        width: 2.5vw;
+        height: 2.5vw;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        transition: 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        color: black;
+        font-size: 1.3vw;
+
+        &.github {
+            border-radius: 0px 0px 0px 16px;
+        }
+
+        &:hover {
+            color: white;
+
+
+            &.github {
+                background: #006C67;
+            }
+
+            &.instagram {
+                background: #405DE6;
+                // background: radial-gradient(top left, #405DE6, #E1316C);
+                background: -webkit-radial-gradient(top left, #405DE6, #E1316C);
+                background: -moz-radial-gradient(top left, #405DE6, #E1316C);
+                background: linear-gradient(to bottom right, #405DE6, #E1316C);
+            }
+
+            &.reddit {
+                background: #FF5700;
+            }
+
+            &.linkedin {
+                background: #0b66c2;
+            }
+
+            &.soundcloud {
+                background: orangered;
+            }
+        }
+    }
+}
+
+
+
+.form-body {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    form {
+        width: 50vw;
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+
+        #big-square-submit {
+            width: 123px;
+            height: 123px;
+            margin: 3px 0px 3px 0px;
+            background: black;
+            border: none;
+            color: white;
+            text-transform: uppercase;
+            font-family: system-ui;
+            font-weight: 800;
+            font-size: 25px;
+            transition: font-size 0.15s ease-out;
+
+            &:hover {
+                background: white;
+                color: black;
+                cursor: pointer;
+                font-size: 24px;
+            }
+        }
+
+        .inputs {
+            width: 80%;
+
+            .input-group {
+                font-family: system-ui;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin: 3px;
+
+                label {
+                    font-weight: 800;
+                    text-transform: lowercase;
+                    text-align: right;
+                    font-size: 2vw;
+                    background: black;
+                    color: white;
+                    height: 60px;
+                    padding: 0px 6px 0px 6px;
+                }
+
+                input {
+                    border: 2px solid white;
+                    width: 100%;
+                    font-size: 1.8vw;
+                    background: white;
+                    font-weight: 200;
+                    font-family: system-ui;
+                    display: flex;
+                    margin: auto;
+                    padding-left: 8px;
+                    height: 60px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+
+            .help-group {
+                text-align: center;
+
+                a {
+                    font-size: 10px;
+                    color: lightgray;
+                    text-decoration: none;
+                    font-family: system-ui;
+                }
+            }
+        }
+    }
+}
+
+.page-title-box {
+    position: absolute;
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-family: system-ui;
+    font-weight: 800;
+    background: white;
+    padding: 0px 24px;
+    text-align: center;
+}
