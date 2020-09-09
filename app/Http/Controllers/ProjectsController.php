@@ -4,10 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class VisitController extends Controller
+class ProjectsController extends Controller
 {
     public function __invoke()
     {
-        
     }
 }

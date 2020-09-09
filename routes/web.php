@@ -19,6 +19,10 @@ Route::get('', function (): RedirectResponse {
 });
 
 Route::get('/home', 'HomeController')->name('home');
+Route::get('/about', 'AboutController')->name('about');
+Route::get('/blog', 'BlogController')->name('blog');
+Route::get('/projects', 'ProjectsController')->name('projects');
+Route::get('/contact', 'ContactController')->name('contact');
 
 require 'admin.php';
 require 'wip.php';
