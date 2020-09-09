@@ -67,15 +67,23 @@ $secondColour: rgba(0, 0, 0, $secondOpacity);
             }
         }
 
+        li.nav-link.active {
+            background: white;
+
+            a {
+                color: black;
+            }
+        }
 
         li.nav-link:hover {
             background: white;
             cursor: pointer;
+
+            a {
+                color: black;
+            }
         }
 
-        li.nav-link:hover a {
-            color: black;
-        }
     }
 
 }

@@ -12,7 +12,7 @@ class HomeController extends Controller
     public function __invoke(Request $request): View
     {
         $nav = Navbar::whereSlug(config('navbar.pages.home'))->first();
-                
+
         return view('home.index')->with('nav', $nav);
     }
 }

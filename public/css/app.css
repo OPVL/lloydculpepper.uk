@@ -60,6 +60,14 @@
   color: lightgray;
 }
 
+.navigation ul li.nav-link.active {
+  background: white;
+}
+
+.navigation ul li.nav-link.active a {
+  color: black;
+}
+
 .navigation ul li.nav-link:hover {
   background: white;
   cursor: pointer;

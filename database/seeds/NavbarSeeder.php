@@ -19,10 +19,10 @@ class NavbarSeeder extends Seeder
         ]);
 
         $navbar->links()->saveMany([
-            new Link(['label' => 'About', 'href' => 'home']),
-            new Link(['label' => 'Projects', 'href' => 'home']),
-            new Link(['label' => 'Blog', 'href' => 'home']),
-            new Link(['label' => 'Contact', 'href' => 'home']),
+            new Link(['label' => 'About', 'href' => 'about']),
+            new Link(['label' => 'Projects', 'href' => 'projects']),
+            new Link(['label' => 'Blog', 'href' => 'blog']),
+            new Link(['label' => 'Contact', 'href' => 'contact']),
         ]);
     }
 }

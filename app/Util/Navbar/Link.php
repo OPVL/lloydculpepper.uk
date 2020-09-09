@@ -45,7 +45,7 @@ class Link extends Model
         return $target !== null ?: "target={$this->target}";
     }
 
-    public function getHrefAttribute(): string
+    public function getUrlAttribute(): string
     {
         $href = $this->attributes['href'];
         return Str::contains($href, ['http', '/']) ? $href : route($href);
