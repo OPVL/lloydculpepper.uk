@@ -28,10 +28,17 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  */
 class Navbar extends Model
 {
+    protected $fillable = ['name', 'slug'];
+    protected $with = ['links'];
+
     public function links(): BelongsToMany
     {
         return $this->belongsToMany(Link::class)
-            ->using(LinkNavbar::class)
-            ->orderBy('link_navbar.index', 'asc');
+            ->using(LinkNavbar::class);
+    }
+
+    public function getEnabledLinksAttribute()
+    {
+        return $this->links->enabled();
     }
 }

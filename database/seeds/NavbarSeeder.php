@@ -13,16 +13,36 @@ class NavbarSeeder extends Seeder
      */
     public function run()
     {
-        $navbar = factory(Navbar::class)->create([
-            'slug' => config('navbar.pages.home'),
-            'name' => 'Main'
-        ]);
+        $navbars = collect(config('navbars'));
+        $navbars->each(function ($navbar, $slug): void {
+            // dump(__METHOD__, $navbar, $slug);
 
-        $navbar->links()->saveMany([
-            new Link(['label' => 'About', 'href' => 'about']),
-            new Link(['label' => 'Projects', 'href' => 'projects']),
-            new Link(['label' => 'Blog', 'href' => 'blog']),
-            new Link(['label' => 'Contact', 'href' => 'contact']),
-        ]);
+            $persistNavbar  = Navbar::updateOrCreate(
+                ['slug' => $slug],
+                ['name' => $navbar['name']]
+            );
+
+            $links = $persistNavbar->links->pluck('label');
+            
+            collect($navbar['links'])->reject(function (array $link) use ($links): bool {
+                // dd(__METHOD__, $link, $links);
+                return $links->contains($link['label']);
+            })->each(function (array $link) use ($persistNavbar): void {
+                $persistNavbar->links()->saveMany([new Link($link)]);
+            });
+            dump($persistNavbar->links()->count());
+            // collect($navbar['links'])
+            //     ->each(function (array $link) use ($links): void {
+            //         dump(__METHOD__, $links, $links->first());
+            //         $links->find
+            //     });
+        });
+
+        // $navbar->links()->saveMany([
+        //     new Link(['label' => 'About', 'href' => 'about']),
+        //     new Link(['label' => 'Projects', 'href' => 'projects']),
+        //     new Link(['label' => 'Blog', 'href' => 'blog']),
+        //     new Link(['label' => 'Contact', 'href' => 'contact']),
+        // ]);
     }
 }

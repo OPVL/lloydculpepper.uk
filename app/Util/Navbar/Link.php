@@ -3,6 +3,7 @@
 namespace App\Util\Navbar;
 
 use Arr;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Str;
@@ -54,5 +55,25 @@ class Link extends Model
     public function __toString(): string
     {
         return "<a href='{$this->href}'{$this->targetAttr}>{$this->label}</a>";
+    }
+
+    public function scopeEnabled(Builder $query): Builder
+    {
+        return $this->where('link_navbar.enabled', '=', true);
+    }
+
+    public function scopeAscending(Builder $query): Builder
+    {
+        return $query->orderBy('link_navbar.index', 'asc');
+    }
+
+    public function scopeDescending(Builder $query): Builder
+    {
+        return $query->orderBy('link_navbar.index', 'desc');
+    }
+
+    public function scopeForNavbar(Builder $query): Builder
+    {
+        return $query->enabled()->ascending();
     }
 }

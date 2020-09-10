@@ -6,10 +6,14 @@ use App\Util\Navbar\LinkNavbar;
 
 class LinkNavbarObserver
 {
-    public function saving(LinkNavbar $pivot)
+    public function creating(LinkNavbar $pivot)
     {
-        $totalLinks = $pivot->navbar->links->count();
-        abort_if($totalLinks >= 8, 400, 'Maximum Link Limit Reached!');
-        $pivot->index = $totalLinks;
+        $linkCount = $pivot->navbar->links()->count();
+        // $totalLinks = 
+        //     ->descending()
+        //     ->first()->toSql();
+        // $var = optional($pivot->navbar->links()->descending()->first())->
+        abort_if($linkCount >= 8, 400, 'Maximum Link Limit Reached!');
+        $pivot->index = $linkCount;
     }
 }

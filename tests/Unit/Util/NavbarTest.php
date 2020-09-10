@@ -10,6 +10,7 @@ class NavbarTest extends TestCase
     /** @test */
     public function can_get_built_target_attribute(): void
     {
+        $this->markTestIncomplete('pending');
         $link = factory(Link::class)->make();
 
         dd(__METHOD__, $link);

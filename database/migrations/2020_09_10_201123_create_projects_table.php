@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLinkNavbarTable extends Migration
+class CreateProjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateLinkNavbarTable extends Migration
      */
     public function up()
     {
-        Schema::create('link_navbar', function (Blueprint $table) {
+        Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->integer('index');
-            $table->boolean('enabled')->default(true);
-            $table->foreignId('navbar_id')->constrained();
-            $table->foreignId('link_id')->constrained();
             $table->timestamps();
         });
     }
@@ -30,6 +26,6 @@ class CreateLinkNavbarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('link_navbar');
+        Schema::dropIfExists('projects');
     }
 }

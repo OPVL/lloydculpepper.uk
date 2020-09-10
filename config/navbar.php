@@ -1,8 +1,7 @@
 <?php
 
 return [
-    'pages' => [
         'home' => 'main',
+        'admin' => 'admin',
         'wip' => 'main-wip',
-    ],
 ];

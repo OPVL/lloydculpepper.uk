@@ -8,7 +8,7 @@ Route::group([
     'as' => 'admin.',
 ], function () {
     Route::get('/', function (): RedirectResponse {
-        return redirect()->to(route('admin.dashboard'));
+        return redirect()->to(route('admin.index'));
     });
     Route::get('/dashboard', 'Admin\DashboardController')->name('dashboard');
 });

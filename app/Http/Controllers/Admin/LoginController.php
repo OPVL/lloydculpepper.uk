@@ -21,7 +21,7 @@ class LoginController extends Controller
 
         \Auth::login($user, $request->cookie('remember_me'));
 
-        return redirect()->to($_SESSION['referrer'] ?? route('admin.dashboard'));
+        return redirect()->to($_SESSION['referrer'] ?? route('admin.index'));
     }
 
     public function forgot(): View
