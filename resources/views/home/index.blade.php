@@ -27,7 +27,7 @@
                             @foreach (config('social') as $social)
 
                                 <a href="{{ $social['link'] }}" class="chroma-shadow {{ $social['label'] }}"
-                                    target="_blank">
+                                    target="_blank" rel="noreferrer" aria-label="{{ $social['label'] }}">
                                     <i class="{{ $social['icon'] }}" aria-hidden="true"></i>
                                     {{-- <h6>{{ $social['label'] }}</h6>
                                     --}}

@@ -1,10 +1,14 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
     <title>@yield('title')</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
-    <script src="https://kit.fontawesome.com/d83d45983d.js" crossorigin="anonymous"></script>
+    <meta name="description" content="The upstart developer, with too much free time and not enough work">
+    <script defer src="https://kit.fontawesome.com/d83d45983d.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="/css/app.css">
+    <link rel="preconnect" href="https://source.unsplash.com">
+    <link rel="preconnect" href="https://images.unsplash.com">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>

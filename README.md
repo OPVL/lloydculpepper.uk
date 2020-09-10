@@ -26,3 +26,5 @@
         * Mail
             * Create 'round-up' emails containing post performance & general site activity
     
+* General
+    * Web optimize/mobile optimize
