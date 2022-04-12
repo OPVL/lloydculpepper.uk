@@ -1,10 +1,10 @@
-    {!! Tracker::script() !!}
+    {{-- {!! Tracker::script() !!} --}}
 
     <!-- Stored in resources/views/child.blade.php -->
 
     @extends('layouts.app')
 
-    @section('title', 'Page Title')
+    @section('title', 'lloyd - developer')
 
         {{-- @section('sidebar')
         @parent
