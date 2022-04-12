@@ -20,7 +20,7 @@
             <div class="hero-image">
                 <div class="login-form inner-content">
                     <div class="form-body">
-                        <form action="{{ route('auth.login.store') }}" method="post">
+                        <form action="{{ route('login.store') }}" method="post">
                             @csrf
                             <div class="inputs">
                                 <div class="input-group" id="first-group">

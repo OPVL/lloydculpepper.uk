@@ -21,7 +21,7 @@ class RouteServiceProvider extends ServiceProvider
      *
      * @var string
      */
-    public const HOME = '/home';
+    public const HOME = '';
 
     /**
      * Define your route model bindings, pattern filters, etc.
@@ -59,7 +59,6 @@ class RouteServiceProvider extends ServiceProvider
     protected function mapWebRoutes()
     {
         Route::middleware('web')
-            ->middleware('cache.headers:private;max_age=31536000')
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
     }

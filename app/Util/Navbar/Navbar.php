@@ -29,6 +29,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Navbar extends Model
 {
     protected $fillable = ['name', 'slug'];
+
     protected $with = ['links'];
 
     public function links(): BelongsToMany

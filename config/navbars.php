@@ -1,8 +1,8 @@
 <?php
 
-/** 
+/**
  * THIS IS NOT NAVBAR CONFIG.
- * 
+ *
  * TODO: replace this with some db driven navbar manager like links are done la
  * base it on pages/route names and tie them together
  */
@@ -21,15 +21,11 @@ return [
             ],
             [
                 'label' => 'Blog',
-                'href' => 'blog',
+                'href' => 'https://blog.lloydculpepper.uk',
             ],
             [
                 'label' => 'Contact',
                 'href' => 'contact',
-            ],
-            [
-                'label' => 'Disabled',
-                'href' => 'disabled',
             ],
         ],
     ],

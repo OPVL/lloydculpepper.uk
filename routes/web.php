@@ -14,15 +14,39 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('', function (): RedirectResponse {
-    return redirect(route('home'));
-});
-
-Route::get('/home', 'HomeController')->name('home');
+Route::get('', 'HomeController')->name('home');
 Route::get('/about', 'AboutController')->name('about');
-Route::get('/blog', 'BlogController')->name('blog');
 Route::get('/projects', 'ProjectsController')->name('projects');
 Route::get('/contact', 'ContactController')->name('contact');
 
-require 'admin.php';
-require 'wip.php';
+
+Route::prefix('admin')
+    ->middleware('auth')
+    ->group(
+        function (): void {
+            Route::get('', 'Admin\DashboardController')->name('admin.dashboard');
+        }
+    );
+
+// Route::prefix('auth')
+//     ->middleware('web')
+//     ->group(
+//         function (): void {
+//             Route::get('login', 'Admin\LoginController@show')->name('login');
+//             // Route::get('forgot', 'Admin\LoginController@forgot')->name('login.forgot');
+//             Route::post('login', 'Admin\LoginController@store')->name('login.store');
+//         }
+//     );
+
+Route::middleware('guest')
+    ->group(
+        function (): void {
+            Route::get('login')->uses('Admin\LoginController@show')->name('login');
+            Route::post('login')->uses('Admin\LoginController@store')->name('login.store');
+
+            // Route::get('forgot')->uses(WorkInProgressController::class)->name('forgot');
+
+            // Route::get('register')->uses([RegisterController::class, 'create'])->name('register');
+            // Route::put('register')->uses([RegisterController::class, 'store'])->name('register.store');
+        }
+    );
