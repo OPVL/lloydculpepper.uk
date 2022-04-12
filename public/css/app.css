@@ -1,10 +1,12 @@
 .chroma-shadow {
     box-shadow: 1vw 1vw 0 rgba(0, 0, 0, 0.3), 2vw 2vw 0 rgba(0, 0, 0, 0.1);
 }
+
 * {
     margin: 0;
     padding: 0;
 }
+
 .app {
     display: flex;
     width: 100vw;
@@ -22,12 +24,13 @@
             rgba(185, 215, 215, 0.52),
             rgba(251, 153, 142, 0.73)
         ),
-        url('/img/covers/photo-1496382340559-548c45073270.jpg');
+        url("/img/covers/photo-1496382340559-548c45073270.jpg");
     background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 .navigation {
     position: absolute;
     bottom: 0;
@@ -68,11 +71,13 @@
 .navigation ul li.nav-link:hover a {
     color: #000;
 }
+
 .inner-content {
     text-align: left;
     padding: 10%;
     width: 90%;
 }
+
 h1#bigname {
     font-family: system-ui;
     font-size: 3.5vw;
@@ -84,6 +89,18 @@ h1#bigname {
     background: #fff;
     text-align: center;
 }
+/* @media (min-width: 600px) {
+    h1#bigname {
+        font-size: 1.7rem;
+        width: 85%;
+        text-align: left;
+        padding-left: 10px;
+        height: 48px;
+        display: flex;
+        align-items: center;
+    }
+} */
+
 h4.tagline {
     text-transform: lowercase;
     color: #d3d3d3;
@@ -98,6 +115,17 @@ h4.tagline {
     text-align: center;
     height: 2.5vw;
 }
+/* h4.tagline.chroma-shadow {
+    font-size: 1.15rem;
+    width: 70%;
+    height: 48px;
+    text-align: left;
+    padding-left: 10px;
+    align-items: center;
+    display: flex;
+    letter-spacing: 5px;
+} */
+
 .social-icons {
     display: flex;
     width: 50%;
@@ -144,6 +172,7 @@ h4.tagline {
 .social-icons a:hover.email {
     background: #f2cb1d;
 }
+
 .form-body {
     display: flex;
     justify-content: flex-start;
@@ -219,6 +248,7 @@ h4.tagline {
     text-decoration: none;
     font-family: system-ui;
 }
+
 .page-title-box {
     position: absolute;
     font-size: 3rem;
@@ -267,6 +297,7 @@ h4.tagline {
     a.chroma-shadow.github {
         padding-left: 4px;
     }
+
     .hero-image {
         background-position: top;
     }
